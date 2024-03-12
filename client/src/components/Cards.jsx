@@ -50,7 +50,9 @@ const Cards = () => {
   useEffect(() => {
     const fetchSlangs = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/slangs");
+        const response = await fetch(
+          "https://desi-lingo-api.vercel.app/api/slangs"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch slangs");
         }
