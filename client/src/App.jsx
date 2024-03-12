@@ -10,12 +10,14 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LocomotiveScroll from "locomotive-scroll";
+import CustomMsg from "./components/CustomMsg";
 
 const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
   return (
     <>
       <Navbar />
+      <CustomMsg />
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/add" element={<Add />} />
