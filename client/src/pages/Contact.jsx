@@ -51,6 +51,7 @@ const Contact = () => {
             ></textarea>
           </div>
           <button
+            disabled
             type="submit"
             className="w-full bg-blue-500 text-white font-semibold py-2 px-6 rounded-md hover:bg-blue-600 transition duration-300"
           >
