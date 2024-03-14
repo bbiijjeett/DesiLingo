@@ -1,51 +1,24 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Card from "./Card";
 
-// const data = [
-//   {
-//     word: "Chutiya",
-//     language: "Hindi",
-//     background:
-//       "Chutiya is a derogatory slang term in Hindi used to describe someone who is foolish, naive, or easily deceived. It is considered highly offensive and should be used with caution.",
-//     definition:
-//       "Chutiya refers to a person who lacks intelligence or common sense, often behaving in a foolish or gullible manner. It can be used as an insult or to mock someone's actions or decisions.",
-//     example: "Don't be such a chutiya and fall for his lies.",
-//     tags: "insult, foolishness, offensive",
-//     by: "Anonymous",
-//     likes: 50,
-//     dislikes: 20,
-//   },
-//   {
-//     word: "Gandu",
-//     language: "Hindi",
-//     background:
-//       "Gandu is a highly offensive slang term in Hindi used to insult someone by calling them a fool or a worthless person. It is considered extremely derogatory and should be avoided in polite conversation.",
-//     definition:
-//       "Gandu literally means 'asshole' in Hindi. It is used to demean someone and question their intelligence or character.",
-//     example: "He's such a gandu for betraying his friends like that.",
-//     tags: "insult, offensive, derogatory",
-//     by: "Anonymous",
-//     likes: 40,
-//     dislikes: 30,
-//   },
-//   {
-//     word: "BC",
-//     language: "Hindi",
-//     background:
-//       "BC is a commonly used slang term in Hindi that stands for 'Bhenchod' which translates to 'sisterfucker' in English. It is an extremely vulgar and offensive term and should be used with extreme caution, if at all.",
-//     definition:
-//       "BC is often used as an expletive to express anger, frustration, or surprise. It can also be used affectionately among close friends, although it is still considered highly disrespectful.",
-//     example: "BC! I can't believe he did that.",
-//     tags: "vulgar, offensive, expletive",
-//     by: "Anonymous",
-//     likes: 70,
-//     dislikes: 10,
-//   },
-// ];
+// Skeleton Loader Component
+const SkeletonLoader = () => {
+  return (
+    <div className="w-full md:w-1/2 rounded-xl  p-5 animate-pulse">
+      <div className="h-8 w-3/4 bg-gray-300 mb-2 rounded-sm"></div>
+      <div className="h-4 w-1/2 bg-gray-300 mb-4 rounded-sm"></div>
+      <div className="h-4 bg-gray-300 mb-2 rounded-sm"></div>
+      <div className="h-3 bg-gray-300 mb-2 rounded-sm"></div>
+      <div className="h-3 bg-gray-300 mb-2 rounded-sm"></div>
+      <div className="h-3 bg-gray-300 rounded-sm"></div>
+    </div>
+  );
+};
 
 const Cards = () => {
   const [slangs, setSlangs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchSlangs = async () => {
@@ -58,6 +31,9 @@ const Cards = () => {
         }
         const data = await response.json();
         setSlangs(data);
+        setTimeout(() => {
+          setLoading(false); // Data loaded, set loading to false after 3 seconds
+        }, 3000);
       } catch (error) {
         console.error(error);
       }
@@ -68,9 +44,15 @@ const Cards = () => {
 
   return (
     <div className="w-full flex flex-col gap-5 items-center justify-center px-10 py-10">
-      {slangs.map((item, index) => {
-        return <Card key={index} item={item} />;
-      })}
+      {loading ? ( // Show skeleton loader while loading
+        <Suspense fallback={<SkeletonLoader />}>
+          {[...Array(5)].map((_, index) => (
+            <SkeletonLoader key={index} />
+          ))}
+        </Suspense>
+      ) : (
+        slangs.map((item, index) => <Card key={index} item={item} />)
+      )}
     </div>
   );
 };

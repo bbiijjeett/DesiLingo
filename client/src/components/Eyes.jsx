@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import bgImg from "../assets/image1.png";
+import bgImg from "../assets/image.png";
 import { Link } from "react-router-dom";
 
 const Eyes = () => {

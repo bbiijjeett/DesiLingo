@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="w-full min-h-screen bg-[#201B79]">
       <Landing />
-      <Marque />
+      {/* <Marque /> */}
       <Eyes />
       <LastBanner />
     </div>
