@@ -28,7 +28,7 @@ const Middle = () => {
       style={{ backgroundImage: bgColor, backgroundSize: "cover" }}
     >
       <div className="flex flex-col justify-center text-6xl md:text-9xl font-extrabold w-full h-full">
-        {["Lost", "in", "translation", "butter", "chicken"].map(
+        {["Lost", "in", "translation", "butter", "chicken🍗"].map(
           (item, index) => (
             <div
               key={index}
