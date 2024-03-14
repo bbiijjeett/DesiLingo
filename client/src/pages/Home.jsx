@@ -29,6 +29,7 @@ const Home = () => {
           {/* <Marque /> */}
           {/* <Eyes /> */}
           <Middle />
+
           <LastBanner />
         </>
       )}

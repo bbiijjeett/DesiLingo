@@ -15,7 +15,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <CustomMsg />
+      {/* <CustomMsg /> */}
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/add" element={<Add />} />

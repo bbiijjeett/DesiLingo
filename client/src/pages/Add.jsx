@@ -51,11 +51,9 @@ const Add = () => {
   };
 
   return (
-    <div className="  bg-[#201B79] text-white">
-      <div className="container mx-auto px-40 py-8">
-        <h1 className="text-3xl font-bold mb-4">
-          <center>Add New Word</center>
-        </h1>
+    <div className="bg-[#201B79] text-white">
+      <div className="container mx-auto px-4 lg:px-20 py-8">
+        <h1 className="text-3xl font-bold mb-4 text-center">Add New Word</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="word" className="block text-lg font-semibold mb-1">
