@@ -5,7 +5,7 @@ const Contact = () => {
     window.alert("Website is not completely ready!");
   };
   return (
-    <div className="container mx-auto px-8 py-8 mt-10">
+    <div className="container mx-auto px-8 py-8 mt-10 mb-10 ">
       <h1 className="text-3xl font-bold text-center mb-8 text-red-600">
         Contact Developer
       </h1>
