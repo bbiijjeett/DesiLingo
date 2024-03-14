@@ -28,7 +28,7 @@ const Middle = () => {
       className="w-full h-screen bg-black"
       style={{ backgroundImage: bgColor, backgroundSize: "cover" }}
     >
-      <div className="flex flex-col justify-around text-9xl font-extrabold w-full h-full">
+      <div className="flex flex-col justify-around text-7xl md:text-9xl font-extrabold w-full h-full">
         {["Lost", "in", "translation", "butter", "chicken"].map(
           (item, index) => (
             <div
@@ -37,7 +37,7 @@ const Middle = () => {
               onMouseEnter={() => handleHover(index)}
               onMouseLeave={() => handleHoverOut()}
             >
-              <h1 className="z-10 relative  hover:italic">{item}</h1>
+              <h1 className="z-10 relative   hover:italic">{item}</h1>
               <div
                 id={`yellowDiv${index}`}
                 className="absolute z-0 w-full h-8 bg-yellow-400"

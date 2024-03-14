@@ -23,7 +23,7 @@ const LastBanner = () => {
   }, []);
 
   return (
-    <div className="last border-b-[1px] border-zinc-300 md:border-b-0 w-full h-[70vh]  md:h-[80vh] bg-[#201B79] text-white flex flex-col items-center justify-center">
+    <div className="last h-[80vh]  border-b-[1px] border-zinc-300 md:border-b-0 w-full h-[70vh]  md:h-[80vh] bg-[#201B79] text-white flex flex-col items-center justify-center">
       <h1 className="text-4xl md:text-9xl font-extrabold leading-none text-center md:text-center">
         Community Stories
       </h1>
