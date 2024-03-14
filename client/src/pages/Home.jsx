@@ -2,7 +2,7 @@
 import React from "react";
 
 import Eyes from "../components/Eyes";
-import Marque from "../components/MarqueS";
+import Marque from "../components/Marque";
 import Landing from "../components/Landing";
 import LastBanner from "../components/LastBanner";
 
@@ -11,6 +11,7 @@ const Home = () => {
     <div className="w-full min-h-screen bg-[#201B79]">
       <Landing />
       {/* <Marque /> */}
+
       <Eyes />
       <LastBanner />
     </div>
