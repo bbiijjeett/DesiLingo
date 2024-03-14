@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  background-color: rgb(245, 228, 27); /* Semi-transparent background */
   z-index: 9999; /* Ensure loader appears on top of everything */
   display: flex;
   justify-content: center;
@@ -12,9 +12,9 @@
 }
 
 .loader-bar {
-  width: 0;
-  height: 4px; /* Adjust the height of the loader bar */
-  background-color: #007bff; /* Change the color of the loader bar */
+  width: 200px; /* Adjust the width of the loader bar */
+  height: 10px; /* Adjust the height of the loader bar */
+  background-color: #ff2200; /* Change the color of the loader bar */
   transition: width 0.1s ease; /* Smooth animation */
   border-radius: 2px; /* Rounded corners */
   position: relative;
@@ -26,5 +26,25 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 12px; /* Adjust font size */
-  color: #333; /* Text color */
+  color: #fb0909; /* Text color */
+}
+
+/* Random Indian language letters */
+.background-letters {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent interaction with the letters */
+}
+
+.letter {
+  font-size: 24px; /* Adjust the font size of the letters */
+  opacity: 0.5; /* Adjust the opacity of the letters */
+  position: absolute;
+  color: red;
+  /* Random positioning */
+  top: calc(100% * var(--y));
+  left: calc(100% * var(--x));
 }

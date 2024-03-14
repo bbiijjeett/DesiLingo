@@ -1,9 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import Loader from "../components/Loader"; // Import the Loader component
-import Eyes from "../components/Eyes";
-import Marque from "../components/Marque";
+// import Eyes from "../components/Eyes";
+// import Marque from "../components/Marque";
 import Landing from "../components/Landing";
 import LastBanner from "../components/LastBanner";
+import Middle from "../components/Middle";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -12,7 +14,7 @@ const Home = () => {
     // Simulate loading delay
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000); // Adjust the delay time as needed
+    }, 2500); // Adjust the delay time as needed
 
     return () => clearTimeout(timer);
   }, []);
@@ -25,7 +27,8 @@ const Home = () => {
         <>
           <Landing />
           {/* <Marque /> */}
-          <Eyes />
+          {/* <Eyes /> */}
+          <Middle />
           <LastBanner />
         </>
       )}
